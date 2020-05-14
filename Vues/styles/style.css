@@ -37,7 +37,7 @@ nav .what_blue
 {
 	height: 500px;
 	width: 100%;
-	background-image: url(img/bg.jpg);
+	background-image: url(../images/bg.jpg);
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
