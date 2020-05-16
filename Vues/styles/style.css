@@ -77,7 +77,6 @@ nav .what_blue
 {
 	color: #11B0CB;
 	font-weight: bold;
-	font-size: ;
 	text-align: center;
 	margin-top: 100px;
 }
@@ -124,7 +123,11 @@ nav .what_blue
 
 }
 
-
+/* vue afficher*/
+.test{
+	margin-top: 1em;
+	padding: 1em 0;
+}
 /* footer */
 
 .newsletter
@@ -138,11 +141,5 @@ nav .what_blue
 	align-items: center;
 }
 
-form
-{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
 
 

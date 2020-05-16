@@ -42,8 +42,8 @@ class Router{
                         $this->liste->start();
                     break;
 
-                    case 'single':
-                        $this->single->start();
+                    case 'evenement':
+                        $this->evenement->start();
                     break;
 
                     case 'user':
@@ -57,8 +57,8 @@ class Router{
                         $this->listAdmin->start();
                         break;
                         
-                    case 'ajoutmodifier':
-                        $this->ajoutmod->start();
+                    case 'add_update':
+                        $this->add_update->start();
                         break;
 
                 default:

@@ -1,6 +1,6 @@
 <?php
 
-  class commentaire{
+  class Commentaire{
       
     private $base;
     function __construct($db){
@@ -8,7 +8,7 @@
     }
 
       function getAll($id){
-          $select= $this->base->prepare('SELECT * FROM commentaire WHERE eve_id=:id');
+          $select= $this->base->prepare('SELECT * FROM commentaire WHERE id=:id');
           $select->execute(array("id"=>$id));
           $commentaire=$select->fetchAll();
           return $commentaire;
@@ -16,9 +16,9 @@
 
       function register($id,$nom,$contenu){
         echo $id.'--'.$nom.'--'.$contenu;
-        $inser= $this->base->prepare('INSERT INTO commentaire(eve_id,nom,contenu ) VALUES(:eve_id, :nom, :contenu)');
+        $inser= $this->base->prepare('INSERT INTO commentaire(id,nom,contenu ) VALUES(:id, :nom, :contenu)');
         $inser->execute(array(
-          'eve_id'=>$id,
+          'id'=>$id,
           'nom'=>$nom,
           'contenu'=>$contenu,
         ));
