@@ -1,3 +1,5 @@
+
+
 <footer>
 	<section class="newsletter">
 		<div class="newsletter_content">
