@@ -21,22 +21,25 @@
  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
  consequat.</p>
 
-
+ <?php
+    foreach ( $evenement as $key) {
+?>
 <section class="image">
 <div class="card">
 <div class="card-image waves-effect waves-block waves-light">
-  <img class="activator" src="images/icone1.png">
+  <img class="activator" src="<?php echo $key ['photo']?>">
 </div>
 <div class="card-content">
-  <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-  <p><a href="#">This is a link</a></p>
+  <span class="card-title activator grey-text text-darken-4"><?php echo $key["nom"]?><i class="material-icons right">more_vert</i></span>
+  <p><a href="index.php?page=single&id=<?php echo $key["id"]?>">This is a link</a></p>
 </div>
 <div class="card-reveal">
-  <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+  <span class="card-title grey-text text-darken-4"><?php echo $key["nom"]?><i class="material-icons right">close</i></span>
   <p>Here is some more information about this product that is only revealed once clicked on.</p>
 </div>
 </div>
 </section>
 </section>
+<?php }?> 
 <?php include('include/js.php'); ?>
 <?php include('include/footer.php'); ?>

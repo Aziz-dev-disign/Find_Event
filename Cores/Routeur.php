@@ -15,7 +15,7 @@ class Router{
     private $accueil;
     private $add_update;
     private $liste;
-    private $connexion;
+    private $login;
     private $user;
     private $evenement;
     private $listAdmin;
@@ -24,7 +24,7 @@ class Router{
         $this->accueil=new Accueil();
         $this->add_update=new Add_update();
         $this->liste=new Liste();
-        $this->connexion=new Login();
+        $this->login=new Login();
         $this->user=new User();
         $this->evenement=new Evenement();
         $this->listAdmin=new ListeAdmin();
@@ -50,8 +50,8 @@ class Router{
                         $this->user->start();
                     break;
 
-                    case 'connexion':
-                        $this->connexion->start();
+                    case 'login':
+                        $this->login->start();
                         break;
                     case 'listeAdmin':
                         $this->listAdmin->start();
@@ -62,7 +62,7 @@ class Router{
                         break;
 
                 default:
-                    echo 'Page non trouvee';
+                    echo 'Erreur 404';
                 break;
             }
          }

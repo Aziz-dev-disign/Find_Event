@@ -1,5 +1,5 @@
 <?php include('include/entete.php'); ?>
-<?php include('include/header.php'); ?>
+<?php include('include/header2.php'); ?>
 <div class="row">
   <div class="col s3">
     <ul id="slide-out" class="sidenav">
@@ -23,37 +23,44 @@
 </div> 
 
 <div class="col s8">
-<div class="text">
-        <h2>Ajouter un évènement</h2>
-      </div>
-<table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
-          </tr>
-        </thead>
-
+  <div class="text">
+    <h2>Ajouter un évènement</h2>
+  </div>
+  <table class="highlight">
+    <thead>
+      <tr>
+          <th>Catégorie</th>
+          <th>Nom</th>
+          <th>Date début</th>
+          <th>Date fin</th>
+          <th>Organisateurs</th>
+          <th>Descriptions</th>
+          <th>Options</th>
+      </tr>
+    </thead>
         <tbody>
+          <?php
+            foreach ($event as $key) {
+          ?>
           <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
+            <td><?php echo $key['categorie'];?></td>
+
+            <td><a class="btn btn-success" href="?page=ajoutmodifier&update=<?php echo $key['id'];?>"><?php echo $key['nom'];?></a></td>
+            
+            <td><?php echo $key['date_debut'];?></td>
+
+            <td><?php echo $key['date_fin'];?></td>
+
+            <td><?php echo $key['organisateur'];?></td>
+            
+            <td><?php echo $key['description'];?></td>
+
+            <td><a class="btn btn-danger" href="?page=listeAdmin&suppr=<?php echo $key['id'];?>">[X]</a></td>
           </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
+          <?php }?> 
         </tbody>
-      </table>
-      </div>
+    </table>
+  </div>
 </div>
       <?php include('include/js.php'); ?>
 

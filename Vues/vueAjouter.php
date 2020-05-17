@@ -1,5 +1,5 @@
 <?php include('include/entete.php'); ?>
-<?php include('include/header.php'); ?>
+<?php include('include/header2.php'); ?>
 <div class="row">
   <div class="col s3">
     <ul id="slide-out" class="sidenav">
@@ -30,36 +30,37 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input  id="categorie" type="text" class="validate" name="categorie">
+          <input type="hidden" name="id" id="" hidden <?php $add_update->nomEmpty($id);?>>
+          <input  id="categorie" type="text" class="validate" name="categorie" <?php $add_update->valu($categorie);?>>
           <label for="categorie">Catégorie</label>
         </div>
         <div class="input-field col s6">
-          <input id="nom" type="text" class="validate" name="nom">
+          <input id="nom" type="text" class="validate" name="nom" <?php $add_update->valu($nom);?>>
           <label for="nom">Nom</label>
         </div>
       </div>
       <div class="row">     
         <div class="input-field col s6">
-          <input id="debut" type="text" class="validate" name="debut">
+          <input id="debut" type="text" class="validate" name="debut" <?php $add_update->valu($debut);?>>
           <label for="debut">Date debut</label>
         </div>     
         <div class="input-field col s6">
-          <input id="fin" type="text" class="validate" name="fin">
+          <input id="fin" type="text" class="validate" name="fin" <?php $add_update->valu($fin);?>>
           <label for="fin">Date fin</label>
         </div>
       </div>
       <div class="row">       
         <div class="input-field col s6">
-          <input id="org" type="text" class="validate" name="organisateur">
+          <input id="org" type="text" class="validate" name="organisateur" <?php $add_update->valu($organisateur);?>>
           <label for="org">Organisateur</label>
         </div>
-        <div class="file-field input-field col s6">
+        <div class="file-field input-field col s6" <?php $add_update->vnomEmpty($descriptions);?>>
           <div class="btn">
             <span>Photo</span>
-            <input type="file" name="photo">
+            <input type="file" name="photo" <?php $add_update->disable($photo);?>>
           </div>
           <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
+            <input class="file-path validate" name="photo" type="text" hidden <?php $add_update->disable($photo);?>>
           </div>
         </div>  
       </div>

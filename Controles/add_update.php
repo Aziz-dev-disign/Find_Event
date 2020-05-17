@@ -63,13 +63,14 @@ class Add_update
 
             }
 
-            if(isset($_POST['categorie']) AND  isset($_POST['nom']) AND isset($_POST['debut']) AND isset($_POST['fin']) AND isset($_POST['organisateur']) AND isset($_POST['descriptions']) AND isset($_POST['photo']))            {
+            if(isset($_POST['categorie']) AND  isset($_POST['nom']) AND isset($_POST['debut']) AND isset($_POST['fin']) AND isset($_POST['organisateur']) AND isset($_POST['descriptions']) AND isset($_POST['photo']))            
+            {
                 $chemin='Packages/imageEvent/'.$_POST['nom'].'.jpg';
                 $this->ajouter->enregistrer($_POST['categorie'],$_POST['nom'],$_POST['debut'],$_POST['fin'],$_POST['organisateur'],$_POST['descriptions'],$chemin);
                 move_uploaded_file($_FILES['photo']['tmp_name'],'Packages/imageEvent/'.trim($_POST['nom']).'.jpg');
             }
 
-            include('Vues/vueAjouter.php');
+            require_once('../Vues/vueAjouter.php');
         }
             
              

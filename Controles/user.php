@@ -14,8 +14,8 @@ class User
 
     function start(){
             $liste=$this->admin->liste();
-            if(isset($_POST['username'])) {
-                $this->admin->creer($_POST['username'],'admin');
+            if(isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['mail']) AND isset($_POST['mdp'])) {
+                $this->admin->creer($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'],'admin');
                 header("location:index.php?page=user");
             }
 

@@ -128,6 +128,24 @@ nav .what_blue
 	margin-top: 1em;
 	padding: 1em 0;
 }
+
+/* vue login*/
+
+.connexion{
+	width: 500px;
+}
+
+.bg-login{
+	height: 100vh;
+	width: 100%;
+	background-image: url(../images/image3.jpg);
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 /* footer */
 
 .newsletter

@@ -1,6 +1,8 @@
 <?php
 
-class Accueil
+
+
+class ListeAdmin
 {
     private $evenement;
 
@@ -14,7 +16,7 @@ class Accueil
 
             $evenement=$this->evenement->lister();
 
-        require_once("../Vues/vueAccueil.php");
+        require_once("../Vues/vueListe.php");
         }
     }
 }
