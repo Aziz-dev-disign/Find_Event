@@ -31,7 +31,7 @@
 </div>
 <div class="card-content">
   <span class="card-title activator grey-text text-darken-4"><?php echo $key["nom"]?><i class="material-icons right">more_vert</i></span>
-  <p><a href="index.php?page=single&id=<?php echo $key["id"]?>">This is a link</a></p>
+  <p><button id="commentaire">commentaire</button></p>
 </div>
 <div class="card-reveal">
   <span class="card-title grey-text text-darken-4"><?php echo $key["nom"]?><i class="material-icons right">close</i></span>
@@ -39,7 +39,41 @@
 </div>
 </div>
 </section>
+<div class="row" id="reponse">
+ <?php
+    foreach ( $commentaire as $key) {
+?>
+
+<p><?php echo $key['pseudo'];?> à dit:</p>
+<p><?php echo $key['commentaire'];?></p>
+ <?php }?> 
+
+ </div>
+<div id="comment">
+     <div class="row">   
+        <div class="input-field col s6">
+          <input id="pseudo" type="text" class="validate" name="pseudo">
+          <label for="pseudo">Pseudo</label>
+        </div> 
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" name="commentaire"></textarea>
+          <label for="textarea1">Descriptions</label>
+        </div>
+        </div>
+      <div class="row">
+          <input class="btn" type="submit" value="Enregistrer">          
+          <input class="btn" type="reset" value="Retour">
+      </div>
+ </div>
 </section>
 <?php }?> 
+<script>
+  $(document).ready(function(){
+    $('#comment').hide();
+    $('#commentaire').click(function(){
+      $('#comment').show();
+    });
+  });
+</script>
 <?php include('include/js.php'); ?>
 <?php include('include/footer.php'); ?>

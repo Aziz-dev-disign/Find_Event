@@ -45,7 +45,7 @@
           <tr>
             <td><?php echo $key['categorie'];?></td>
 
-            <td><a class="btn btn-success" href="?page=ajoutmodifier&update=<?php echo $key['id'];?>"><?php echo $key['nom'];?></a></td>
+            <td><a class="btn btn-success" href="?page=add_update&update=<?php echo $key['id'];?>"><?php echo $key['nom'];?></a></td>
             
             <td><?php echo $key['date_debut'];?></td>
 
@@ -53,9 +53,9 @@
 
             <td><?php echo $key['organisateur'];?></td>
             
-            <td><?php echo $key['description'];?></td>
+            <td><?php echo $key['descriptions'];?></td>
 
-            <td><a class="btn btn-danger" href="?page=listeAdmin&suppr=<?php echo $key['id'];?>">[X]</a></td>
+            <td><a class="btn btn-danger" href="?page=liste&suppr=<?php echo $key['id'];?>">[X]</a></td>
           </tr>
           <?php }?> 
         </tbody>

@@ -1,4 +1,5 @@
 <?php
+require_once('Modeles/admi.php');
 class Login
 {
    
@@ -13,13 +14,13 @@ class Login
             if ($admi!=false)
             {
                 $_SESSION["id"]=$admi["id"];
-                header("location:index.php?page=user");
+                header("location:index.php?page=add_update");
             }
             else{
                 header("location:index.php?page=login");
             }
 
         }
-        include("Vues/vueInscription.php");
+        require_once("Vues/vueLogin.php");
     }
 }

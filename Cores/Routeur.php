@@ -13,29 +13,49 @@ function loadcontroller($class){
 spl_autoload_register('loadcontroller');
 class Router{
     private $accueil;
+    private $national;
     private $add_update;
     private $liste;
     private $login;
     private $user;
     private $evenement;
-    private $listAdmin;
+    private $inter;
+    private $meet;
 
      function __construct(){
-        $this->accueil=new Accueil();
+        $this->accueil=new Accueil();        
+        $this->national=new National();
         $this->add_update=new Add_update();
         $this->liste=new Liste();
         $this->login=new Login();
-        $this->user=new User();
-        $this->evenement=new Evenement();
-        $this->listAdmin=new ListeAdmin();
+        $this->inter=new International();
+        $this->user=new Inscription();
+        $this->evenement=new FindEven();        
+        $this->meet=new Meet();
+        $this->contact=new Contact(); 
      }
 
      function request(){
          if(isset($_GET['page'])){
-
             switch ($_GET['page']) {
                     case 'accueil':
                     $this->accueil->start();
+                    break;
+
+                    case 'national':
+                    $this->national->start();
+                    break;
+
+                    case 'international':
+                    $this->inter->start();
+                    break;
+
+                    case 'meet':
+                    $this->meet->start();
+                    break;
+
+                    case 'contact':
+                    $this->contact->start();
                     break;
                 
                     case 'liste':
@@ -46,7 +66,7 @@ class Router{
                         $this->evenement->start();
                     break;
 
-                    case 'user':
+                    case 'inscription':
                         $this->user->start();
                     break;
 

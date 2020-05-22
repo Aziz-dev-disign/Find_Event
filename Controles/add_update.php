@@ -8,21 +8,16 @@ class Add_update
         $this->ajouter= new Evenement($db);
         }
 
-        function nomEmpty($arg){
-            if ($arg!="") {
-               echo $arg;
-            } 
-            
-        }
-
-        function valu($arg){
+        public function valu($arg)
+        {
             if ($arg!="") {
                echo 'value="'.$arg.'"';
             } 
             
         }
 
-        function disable($arg){
+        public function disable($arg)
+        {
             
             if ($arg!="") {
                 echo 'disabled';
@@ -32,13 +27,13 @@ class Add_update
 
         function start(){
 
-            $ajoutmodifier=$this;
+            $add_update=$this;
 
             $id="";
             $categorie="";
             $nom="";
-            $date_debut="";
-            $date_fin="";
+            $debut="";
+            $fin="";
             $organisateur="";            
             $description="";
             $photo="";
@@ -50,8 +45,8 @@ class Add_update
                 $id=$_GET['update'];
                 $categorie=$mod['categorie'];
                 $nom=$mod['nom'];
-                $date_debut=$mod['dateDebut'];
-                $date_fin=$mod['dateFin'];
+                $date_debut=$mod['date_debut'];
+                $date_fin=$mod['date_fin'];
                 $organisateur=$mod['organisateur'];                
                 $description=$mod['descriptions'];
                 $photo=$mod['photo'];
@@ -70,7 +65,7 @@ class Add_update
                 move_uploaded_file($_FILES['photo']['tmp_name'],'Packages/imageEvent/'.trim($_POST['nom']).'.jpg');
             }
 
-            require_once('../Vues/vueAjouter.php');
+            require_once('Vues/vueAjouter.php');
         }
             
              

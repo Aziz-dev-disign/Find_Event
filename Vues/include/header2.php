@@ -6,7 +6,7 @@
         <li><a class="what_blue" href="index.php?page=accueil">Accueil</a></li>
         <li><a  href="index.php?page=add_update">Ajouter</a></li>
         <li><a href="index.php?page=liste">Liste</a></li>
-        <li><a href="index.php?page=user">Login</a></li>
+        <li><a href="index.php?page=login">Login</a></li>
       </ul>
     </div>
   </nav>

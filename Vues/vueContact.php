@@ -22,5 +22,32 @@
  consequat.</p>
 </section>
 
+<section class="vignettes">
+	<div class="vignettes_solo">
+		<img src="img/icone1.png">
+		<h3>Téléphone</h3>
+		<p>00226 70 00 00 00<br>
+		00226 76 00 00 00.</p>
+	</div>
+
+	<div class="vignettes_solo">
+		<img src="img/icone2.png">
+		<h3>Email</h3>
+		<p>Lorem impsum is simply dummy text of<br>
+		the printing and typesetting industry. <br>            
+        <a href="mailto:contact@findevent.com">contact us</a>
+        </p>
+	</div>
+
+	<div class="vignettes_solo">
+		<img src="img/icone3.png">
+		<h3>Sociaux</h3>
+	<p>Lorem impsum is simply dummy text of<br>
+		the printing and typesetting industry.</p>
+	</div>
+
+	
+</section>
+
 <?php include('include/js.php'); ?>
 <?php include('include/footer.php'); ?>

@@ -30,7 +30,7 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input type="hidden" name="id" id="" hidden <?php $add_update->nomEmpty($id);?>>
+          <input type="hidden" name="id" id="" hidden <?php $add_update->valu($id);?>>
           <input  id="categorie" type="text" class="validate" name="categorie" <?php $add_update->valu($categorie);?>>
           <label for="categorie">Catégorie</label>
         </div>
@@ -54,19 +54,16 @@
           <input id="org" type="text" class="validate" name="organisateur" <?php $add_update->valu($organisateur);?>>
           <label for="org">Organisateur</label>
         </div>
-        <div class="file-field input-field col s6" <?php $add_update->vnomEmpty($descriptions);?>>
+        <div class="file-field input-field col s6">
           <div class="btn">
             <span>Photo</span>
             <input type="file" name="photo" <?php $add_update->disable($photo);?>>
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" name="photo" type="text" hidden <?php $add_update->disable($photo);?>>
           </div>
         </div>  
       </div>
       <div class="row">  
         <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" name="descriptions"></textarea>
+          <textarea id="textarea1" class="materialize-textarea" name="descriptions"  <?php $add_update->valu($descriptions);?>></textarea>
           <label for="textarea1">Descriptions</label>
           </div>
         </div>

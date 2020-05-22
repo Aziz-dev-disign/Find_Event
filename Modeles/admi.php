@@ -1,7 +1,8 @@
 <?php
 
 
-class Admin{
+class Admin
+{
 
     private $id="";
     private $nom="";
@@ -14,7 +15,7 @@ class Admin{
     $this->base=$db;
 }
 function isAdmin($username,$Password){
-    $verif=$this->base->prepare("SELECT * FROM administrateur WHERE mail=:idt AND motdepasse=:pass");
+    $verif=$this->base->prepare("SELECT * FROM admin WHERE mail=:idt AND motdepasse=:pass");
     $verif->execute(array(
         "idt"=>$username,
         "pass"=>sha1($Password),
@@ -30,7 +31,7 @@ function isAdmin($username,$Password){
 }
 
 function updateProfil($id,$nom,$prenom,$mail,$motdepasse){
-    $modif=$this->base->prepare("UPDATE administrateur SET nom=:nom, prenom=:prenom, mail=:mail, motdepasse=:mdp WHERE id=:id");
+    $modif=$this->base->prepare("UPDATE admin SET nom=:nom, prenom=:prenom, mail=:mail, motdepasse=:mdp WHERE id_admi=:id");
     $modif->execute(array(
         "nom"=>$nom,
         "prenom"=>$prenom,
@@ -40,7 +41,7 @@ function updateProfil($id,$nom,$prenom,$mail,$motdepasse){
     ));
 }
 function creer($nom,$prenom,$mail,$motdepasse){
-    $inserer=$this->base->prepare("INSERT INTO administrateur(nom, prenom, mail, modepasse) VALUES(:nom, :prenom, :mail, :mdp)");
+    $inserer=$this->base->prepare("INSERT INTO admin(nom, prenom, mail, modepasse) VALUES(:nom, :prenom, :mail, :mdp)");
     $inserer->execute(array(
         "nom"=>$nom,
         "prenom"=>$prenom,
@@ -50,15 +51,17 @@ function creer($nom,$prenom,$mail,$motdepasse){
 }
 
 function supprimer($id){
-    $supri=$this->base->prepare("DELETE FROM administrateur WHERE id=:id");
+    $supri=$this->base->prepare("DELETE FROM admin WHERE id_admi=:id");
 $supri->execute(array(
     "id"=>$id
 ));
 }
 
-function liste(){
-    $ls=$this->base->query("SELECT * FROM administrateur");
-   return $ls->fetchAll();
-   }
+// function liste()
+// {
+//     $ls=$this->base->query("SELECT * FROM admin WHERE id=?");
+//    $q = $ls->fetchAll();
+//    return $q;
+// }
 
 }

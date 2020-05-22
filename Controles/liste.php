@@ -6,7 +6,7 @@ class Liste
      function __construct() {
      $base= new Db();
      $db= $base-> connect();
-     $this->evenement= new evenement($db);
+     $this->evenement= new Evenement($db);
      }
      function start(){
  
@@ -14,6 +14,6 @@ class Liste
                  $this->evenement->supprimer($_GET['suppr']);
              }
              $event=$this->evenement->lister();
-             include('Vues/vueListe.php');
+             require_once('Vues/vueListe.php');
      }
  }

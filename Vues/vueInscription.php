@@ -28,29 +28,48 @@
       <div class="text">
         <h2>S'inscrir</h2>
       </div>
+      <div class="row warning">
+        <div class="col s6 center">
+          <?php 
+            if (isset($msg)) 
+            {
+                echo '<font color="red">' .$msg.'</font>';
+            }
+          ?>
+        </div>
+      </div>
       <div class="row">
         <div class="input-field col s6">
           <input id="nom" type="text" class="validate" name="nom" <?php $add_update->valu($nom);?>>
           <label for="nom">Nom</label>
         </div>
       </div>
+      <div class="input-field col s6">
+          <input id="nom" type="text" class="validate" name="prenom" <?php $add_update->valu($prenom);?>>
+          <label for="nom">prenom</label>
+        </div>
+      </div>
       <div class="row">     
         <div class="input-field col s6">
-          <input id="debut" type="text" class="validate" name="debut" <?php $add_update->valu($debut);?>>
-          <label for="debut">Prenom</label>
+          <input id="debut" type="text" class="validate" name="mail" <?php $add_update->valu($mail);?>>
+          <label for="debut">Email</label>
         </div>     
         <div class="input-field col s6">
-          <input id="fin" type="text" class="validate" name="fin" <?php $add_update->valu($fin);?>>
-          <label for="fin">Email</label>
+          <input id="fin" type="text" class="validate" name="mail2">
+          <label for="fin">Confirmez votre email</label>
         </div>
       </div>
       <div class="row">       
         <div class="input-field col s6">
-          <input id="org" type="text" class="validate" name="organisateur" <?php $add_update->valu($organisateur);?>>
+          <input id="org" type="password" class="validate" name="mdp" <?php $add_update->valu($mdp);?>>
           <label for="org">Mot de passe</label>
         </div>
+        <div class="input-field col s6">
+          <input id="org" type="password" class="validate" name="mdp2">
+          <label for="org">Confirmez votre mot de passe</label>
+        </div>
       <div class="row">
-          <input class="btn" type="submit" value="Enregistrer" name="enregistrer">          
+          <input class="btn" type="submit" value="Enregistrer" name="formulaire">          
           <input class="btn" type="reset" value="Retour">
       </div>
     </form>

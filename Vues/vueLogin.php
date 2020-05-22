@@ -5,7 +5,6 @@
       <div class="text">
         <h2>Connexion</h2>
       </div>
-      <div class="warning"></div>
       <div class="row">
         <div class="input-field col s12">
           <input type="hidden" name="id" id="" >
@@ -19,10 +18,10 @@
         <div class="row">
         </div class=" col s6">
         <div>
-            <a href="">Mot de passe oublié?</a>
+            <a href="index.php?page=inscription">Mot de passe oublié?</a>
         </div>
         <div class=" col s6">
-            <a href="#">S'inscrir ?</a>
+            <a href="index.php?page=inscription">S'inscrir ?</a>
         </div>
       
       </div>
